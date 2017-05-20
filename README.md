@@ -29,7 +29,7 @@ rc.localを利用
 
 ### cronの@rebootを使用
 
-    sudo chmod 777 /home/ユーザー名/boot_script/boot_script.sh      //権限を設定         
+    sudo chmod 777 /home/ユーザー名/boot_script/r_boot_script.sh      //権限を設定         
     sudo su                                                        //rootになる
     crontab  -e　　　　　　　                                       //crontabの設定ファイルを開く
 
