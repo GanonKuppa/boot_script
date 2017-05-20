@@ -3,16 +3,6 @@
 
 # 使い方メモ
 
-## root権限で実行したいコマンド
-rc.localを利用。
-
-    sudo vim /etc/rc.local
-
-    -------------エディタが開く--------------
-    下を追記
-    /home/ユーザー名/boot_script/r_boot_script.sh
-
-
 ## ユーザー権限で実行したいコマンド
 
 cronの@rebootを用いると便利。
@@ -23,3 +13,26 @@ cronの@rebootを用いると便利。
     -------------エディタが開く--------------
 
     @reboot /home/ユーザー名/boot_script/boot_script.sh             //boot_script.shを絶対パスで指定         
+
+
+
+
+## root権限で実行したいコマンド
+rc.localを利用
+
+### rc.localを利用
+    sudo vim /etc/rc.local
+
+    -------------エディタが開く--------------
+    下を追記
+    /home/ユーザー名/boot_script/r_boot_script.sh
+
+### cronの@rebootを使用
+
+    sudo chmod 777 /home/ユーザー名/boot_script/boot_script.sh      //権限を設定         
+    sudo su                                                        //rootになる
+    crontab  -e　　　　　　　                                       //crontabの設定ファイルを開く
+
+    -------------エディタが開く--------------
+
+    @reboot /home/ユーザー名/boot_script/r_boot_script.sh           //boot_script.shを絶対パスで指定         
